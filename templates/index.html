@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartTrav - Travel Recommendation</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <section class="showcase">
+      <header>
+        <h2 class="logo">SmartTrav</h2>
+        <div class="toggle"></div>
+      </header>
+
+      <video
+        src="{{ url_for('static', filename='explore.mp4') }}"
+        muted
+        loop
+        autoplay
+        class="video"
+      ></video>
+
+      <div class="overlay"></div>
+
+      <div class="text">
+        <h2>Never Stop</h2>
+        <h3>Exploring the World</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+          laboriosam unde inventore minima voluptatem at atque dolores quis
+          doloribus quia.
+        </p>
+
+        <form class="search-form">
+          <input
+            type="text"
+            id="location"
+            placeholder="Enter location..."
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
+
+        <div class="results-container">
+          <div class="results-grid">
+            <div class="places-section">
+              <h2>Tourist Places</h2>
+              <div class="places-grid">
+                <!-- Places will be dynamically inserted here -->
+              </div>
+            </div>
+
+            <div class="dining-section">
+              <h2>Dining Spots</h2>
+              <div class="dining-grid">
+                <!-- Dining spots will be dynamically inserted here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Destination</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <ul class="social">
+      <li>
+        <a href="#"
+          ><img src="https://i.ibb.co/x7P24fL/facebook.png" alt="Facebook"
+        /></a>
+      </li>
+      <li>
+        <a href="#"
+          ><img src="https://i.ibb.co/ySwtH4B/instagram.png" alt="Instagram"
+        /></a>
+      </li>
+      <li>
+        <a href="#"
+          ><img src="https://i.ibb.co/Wnxq2Nq/twitter.png" alt="Twitter"
+        /></a>
+      </li>
+    </ul>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+  </body>
+</html>

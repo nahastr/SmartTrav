@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: #fff;
+    cursor: pointer;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: url(https://i.ibb.co/HrfVRcx/menu.png) no-repeat center;
+    background-size: 30px;
+    cursor: pointer;
+}
+
+.toggle.active {
+    background: url(https://i.ibb.co/rt3HybH/close.png) no-repeat center;
+    background-size: 25px;
+}
+
+.showcase {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.showcase.active {
+    right: 300px;
+}
+
+.showcase video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #03a9f4;
+    mix-blend-mode: overlay;
+}
+
+.text {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.text h2 {
+    font-size: 5em;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text h3 {
+    font-size: 4em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text p {
+    font-size: 1.1em;
+    color: #fff;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+}
+
+/* Results Container Styles */
+.results-container {
+    margin-top: 40px;
+    color: #fff;
+    width: 100%;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.places-section, .dining-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.places-section h2, .dining-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.places-grid, .dining-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.place-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-5px);
+}
+
+.place-card h3 {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.place-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.place-card .rating {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.place-card .review {
+    font-style: italic;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .places-section, .dining-section {
+        margin-bottom: 20px;
+    }
+}
+
+/* Search Styles */
+.search-form {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 1em;
+}
+
+.search-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-form button {
+    padding: 12px 30px;
+    background: #03a9f4;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background: #0288d1;
+}
+
+/* Menu Styles */
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.menu ul {
+    position: relative;
+}
+
+.menu ul li {
+    list-style: none;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+}
+
+.menu ul li a:hover {
+    color: #03a9f4;
+}
+
+/* Social Media Styles */
+.social {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1000;
+}
+
+.social li {
+    list-style: none;
+}
+
+.social li a {
+    display: inline-block;
+    margin-left: 20px;
+    filter: invert(1);
+    transform: scale(0.5);
+    transition: 0.5s;
+}
+
+.social li a:hover {
+    transform: scale(0.5) translateY(-15px);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .showcase,
+    .showcase header {
+        padding: 40px;
+    }
+    
+    .text h2 {
+        font-size: 3em;
+    }
+    
+    .text h3 {
+        font-size: 2em;
+    }
+    
+    .social {
+        right: 10px;
+    }
+    
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .showcase {
+        padding: 20px;
+    }
+    
+    .social {
+        right: 0;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .social li a {
+        margin: 0 10px;
+    }
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.places-section,
+.dining-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.place-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.place-card h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.place-card p {
+    margin: 10px 0;
+    color: #fff;
+}
+
+.error {
+    color: #ff4444;
+    text-align: center;
+    padding: 20px;
+}
